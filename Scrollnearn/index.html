@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0f0c29">
     <title>Get Paid to Scroll TikTok</title>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -10,6 +13,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            touch-action: manipulation;
         }
 
         body {
@@ -479,34 +490,194 @@
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 16px;
+            }
+
             .logo-text {
-                font-size: 24px;
+                font-size: 22px;
+                letter-spacing: 2px;
+            }
+
+            .logo-divider {
+                font-size: 20px;
             }
 
             h1 {
-                font-size: 36px;
+                font-size: 32px;
+                margin-bottom: 16px;
             }
 
             .subtitle {
-                font-size: 18px;
+                font-size: 16px;
+                margin-bottom: 24px;
             }
 
             .earning-badge {
-                font-size: 16px;
+                font-size: 15px;
                 padding: 12px 24px;
+                margin-bottom: 32px;
             }
 
             .question {
-                font-size: 24px;
+                font-size: 22px;
+                margin-bottom: 24px;
             }
 
             .age-btn {
-                padding: 24px 20px;
+                padding: 22px 20px;
                 font-size: 20px;
+                border-radius: 18px;
+            }
+
+            .age-btn-subtitle {
+                font-size: 13px;
+                margin-top: 8px;
             }
 
             .features {
                 gap: 10px;
+                margin-bottom: 32px;
+            }
+
+            .feature {
+                padding: 18px 10px;
+                border-radius: 14px;
+            }
+
+            .feature-icon {
+                font-size: 24px;
+                margin-bottom: 6px;
+            }
+
+            .feature-text {
+                font-size: 11px;
+            }
+
+            .trust-section {
+                margin-top: 40px;
+                padding-top: 28px;
+            }
+
+            .stars {
+                font-size: 18px;
+            }
+
+            .rating-text {
+                font-size: 14px;
+            }
+
+            .user-count {
+                font-size: 13px;
+                margin-top: 12px;
+            }
+
+            /* Instructions Page Mobile */
+            .instructions-header {
+                margin-bottom: 32px;
+            }
+
+            .brand-logo {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .instructions-title {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .instructions-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .section-label {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+
+            .step {
+                padding: 20px 16px;
+                gap: 16px;
+                border-radius: 18px;
+            }
+
+            .step-number {
+                width: 44px;
+                height: 44px;
+                font-size: 20px;
+                border-radius: 10px;
+            }
+
+            .step-title {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+
+            .step-description {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .step-badge {
+                font-size: 10px;
+                padding: 4px 10px;
+                margin-top: 6px;
+            }
+
+            .cta-button {
+                padding: 18px;
+                font-size: 17px;
+                border-radius: 14px;
+                margin-bottom: 20px;
+            }
+
+            .payment-methods {
+                font-size: 12px;
+                margin-top: 12px;
+            }
+
+            .step-list {
+                gap: 14px;
+                margin-bottom: 28px;
+            }
+        }
+
+        /* Extra small screens (iPhone SE, small Android phones) */
+        @media (max-width: 375px) {
+            body {
+                padding: 12px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            .earning-badge {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .question {
+                font-size: 20px;
+            }
+
+            .age-btn {
+                padding: 20px 18px;
+                font-size: 18px;
+            }
+
+            .age-btn-subtitle {
+                font-size: 12px;
             }
 
             .feature {
@@ -514,25 +685,93 @@
             }
 
             .feature-icon {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .feature-text {
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .instructions-title {
-                font-size: 32px;
+                font-size: 26px;
+            }
+
+            .step {
+                padding: 18px 14px;
             }
 
             .step-number {
                 width: 40px;
                 height: 40px;
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .step-title {
+                font-size: 15px;
+            }
+
+            .step-description {
+                font-size: 12px;
+            }
+
+            .cta-button {
+                padding: 16px;
                 font-size: 16px;
+            }
+        }
+
+        /* Landscape mode optimization */
+        @media (max-height: 600px) and (orientation: landscape) {
+            body {
+                padding: 12px;
+                align-items: flex-start;
+                padding-top: 20px;
+            }
+
+            .dual-logo {
+                margin-bottom: 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .subtitle {
+                margin-bottom: 16px;
+            }
+
+            .earning-badge {
+                margin-bottom: 20px;
+            }
+
+            .features {
+                margin-bottom: 20px;
+            }
+
+            .question {
+                margin-bottom: 16px;
+            }
+
+            .age-buttons {
+                margin-bottom: 20px;
+            }
+
+            .trust-section {
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+        }
+
+        /* Touch target optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .age-btn, .cta-button {
+                min-height: 60px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .feature {
+                -webkit-tap-highlight-color: transparent;
             }
         }
     </style>
