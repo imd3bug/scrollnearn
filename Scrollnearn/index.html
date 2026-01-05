@@ -692,6 +692,17 @@
     </div>
 
     <script>
+        // Get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Store the sub1 parameter when page loads
+        var sub1Param = getUrlParameter('sub1');
+
         function showInstructions(ageGroup) {
             // Hide age gate
             document.getElementById('ageGate').classList.remove('active');
@@ -702,20 +713,39 @@
                 
                 // Track 21+ selection
                 console.log('Age selected: 21+');
-                // fbq('track', 'AgeSelected', {age: '21+'});
-                // ttq.track('ClickButton', {content_name: '21plus'});
+                console.log('Sub1 tracking parameter:', sub1Param);
+                // fbq('track', 'AgeSelected', {age: '21+', sub1: sub1Param});
+                // ttq.track('ClickButton', {content_name: '21plus', sub1: sub1Param});
             } else {
                 document.getElementById('instructionsUnder21').classList.add('active');
                 
                 // Track under 21 selection
                 console.log('Age selected: under 21');
-                // fbq('track', 'AgeSelected', {age: 'under_21'});
-                // ttq.track('ClickButton', {content_name: 'under21'});
+                console.log('Sub1 tracking parameter:', sub1Param);
+                // fbq('track', 'AgeSelected', {age: 'under_21', sub1: sub1Param});
+                // ttq.track('ClickButton', {content_name: 'under21', sub1: sub1Param});
             }
             
             // Scroll to top
             window.scrollTo(0, 0);
         }
+
+        // Update CTA links with sub1 parameter when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            if (sub1Param) {
+                // Get all CTA buttons
+                var ctaButtons = document.querySelectorAll('.cta-button');
+                
+                ctaButtons.forEach(function(button) {
+                    var currentHref = button.getAttribute('href');
+                    // Add sub1 parameter to the URL
+                    var separator = currentHref.includes('?') ? '&' : '?';
+                    button.setAttribute('href', currentHref + separator + 'sub1=' + encodeURIComponent(sub1Param));
+                });
+
+                console.log('Tracking parameter sub1 applied:', sub1Param);
+            }
+        });
     </script>
 </body>
 </html>
