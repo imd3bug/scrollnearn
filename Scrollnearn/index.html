@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Paid to Scroll TikTok</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            top: -250px;
+            right: -250px;
+            border-radius: 50%;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+            bottom: -200px;
+            left: -200px;
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Age Gate Page Styles */
+        .dual-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .logo-text {
+            font-family: 'Righteous', cursive;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo-freecash {
+            background: linear-gradient(135deg, #4ade80 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+        }
+
+        .logo-divider {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 24px;
+        }
+
+        .logo-playful {
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
+        }
+
+        h1 {
+            font-family: 'Righteous', cursive;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #4ade80 0%, #a78bfa 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s infinite;
+            background-size: 200% 100%;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #c4b5fd;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .earning-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+            border: 2px solid rgba(167, 139, 250, 0.4);
+            border-radius: 50px;
+            padding: 14px 32px;
+            margin-bottom: 40px;
+            font-size: 18px;
+            font-weight: 700;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+            box-shadow: 0 4px 20px rgba(167, 139, 250, 0.2);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .earning-amount {
+            background: linear-gradient(135deg, #4ade80 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 8px 24px rgba(167, 139, 250, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 2px 8px rgba(167, 139, 250, 0.3));
+        }
+
+        .feature-text {
+            font-size: 13px;
+            color: #c4b5fd;
+            font-weight: 600;
+        }
+
+        .question {
+            font-family: 'Righteous', cursive;
+            font-size: 28px;
+            margin-bottom: 28px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .age-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .age-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 28px 24px;
+            font-family: 'Righteous', cursive;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: block;
+            overflow: hidden;
+        }
+
+        .age-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, rgba(34, 211, 238, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .age-btn:hover::before {
+            opacity: 1;
+        }
+
+        .age-btn:hover {
+            transform: translateY(-4px);
+            border-color: rgba(74, 222, 128, 0.6);
+            box-shadow: 0 12px 40px rgba(74, 222, 128, 0.3);
+        }
+
+        .age-btn.primary {
+            background: linear-gradient(135deg, #4ade80 0%, #22d3ee 100%);
+            border: none;
+            color: #0f0c29;
+            box-shadow: 0 8px 32px rgba(74, 222, 128, 0.4);
+        }
+
+        .age-btn.primary::before {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+        }
+
+        .age-btn.primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(74, 222, 128, 0.5);
+        }
+
+        .age-btn.secondary {
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            border: none;
+            color: #ffffff;
+            box-shadow: 0 8px 32px rgba(167, 139, 250, 0.4);
+        }
+
+        .age-btn.secondary::before {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .age-btn.secondary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(167, 139, 250, 0.5);
+        }
+
+        .age-btn-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .trust-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trust-indicators {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 20px;
+            letter-spacing: 2px;
+            filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.4));
+        }
+
+        .rating-text {
+            font-size: 16px;
+            color: #c4b5fd;
+            font-weight: 600;
+        }
+
+        .user-count {
+            display: inline-block;
+            margin-top: 16px;
+            color: #a78bfa;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Instructions Page Styles */
+        .instructions-header {
+            margin-bottom: 40px;
+        }
+
+        .brand-logo {
+            font-family: 'Righteous', cursive;
+            font-size: 28px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .instructions-title {
+            font-family: 'Righteous', cursive;
+            font-size: 38px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .instructions-subtitle {
+            font-size: 18px;
+            color: #c4b5fd;
+            margin-bottom: 24px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #a78bfa;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .step {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 8px 24px rgba(167, 139, 250, 0.15);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #4ade80 0%, #22d3ee 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Righteous', cursive;
+            font-size: 24px;
+            color: #0f0c29;
+            font-weight: 700;
+        }
+
+        .step.purple .step-number {
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            color: #ffffff;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .step-description {
+            font-size: 14px;
+            color: #c4b5fd;
+            line-height: 1.5;
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-badge.important {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, #4ade80 0%, #22d3ee 100%);
+            border: none;
+            border-radius: 16px;
+            padding: 20px;
+            font-family: 'Righteous', cursive;
+            font-size: 18px;
+            color: #0f0c29;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(74, 222, 128, 0.4);
+            margin-bottom: 24px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(74, 222, 128, 0.6);
+        }
+
+        .cta-button.purple {
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 32px rgba(167, 139, 250, 0.4);
+        }
+
+        .cta-button.purple:hover {
+            box-shadow: 0 12px 40px rgba(167, 139, 250, 0.6);
+        }
+
+        .payment-methods {
+            font-size: 13px;
+            color: #a78bfa;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 24px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .earning-badge {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+
+            .question {
+                font-size: 24px;
+            }
+
+            .age-btn {
+                padding: 24px 20px;
+                font-size: 20px;
+            }
+
+            .features {
+                gap: 10px;
+            }
+
+            .feature {
+                padding: 16px 8px;
+            }
+
+            .feature-icon {
+                font-size: 24px;
+            }
+
+            .feature-text {
+                font-size: 11px;
+            }
+
+            .instructions-title {
+                font-size: 32px;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .step-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Age Gate Page -->
+        <div id="ageGate" class="page active">
+            <div class="dual-logo">
+                <span class="logo-text logo-freecash">FREECASH</span>
+                <span class="logo-divider">×</span>
+                <span class="logo-text logo-playful">PLAYFUL</span>
+            </div>
+            
+            <h1>Get paid to<br><span class="highlight">scroll TikTok</span></h1>
+            
+            <p class="subtitle">Turn your screen time into cash.</p>
+            
+            <div class="earning-badge">
+                Earn up to <span class="earning-amount">$2,000/week</span>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">Instant Payouts</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎮</div>
+                    <div class="feature-text">Play & Earn</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">Fast Setup</div>
+                </div>
+            </div>
+
+            <p class="question">How old are you?</p>
+            
+            <div class="age-buttons">
+                <button onclick="showInstructions('21plus')" class="age-btn primary">
+                    21+
+                    <div class="age-btn-subtitle">Instant payouts: PayPal, Crypto, Bank Transfer & more</div>
+                </button>
+                
+                <button onclick="showInstructions('under21')" class="age-btn secondary">
+                    Under 21
+                    <div class="age-btn-subtitle">Start earning gift cards & rewards</div>
+                </button>
+            </div>
+
+            <div class="trust-section">
+                <div class="trust-indicators">
+                    <div class="stars">★★★★★</div>
+                    <div class="rating-text">4.8 · 251k reviews</div>
+                </div>
+                <div class="user-count">1.3M+ active users</div>
+            </div>
+        </div>
+
+        <!-- 21+ Instructions Page -->
+        <div id="instructions21plus" class="page">
+            <div class="instructions-header">
+                <div class="brand-logo logo-freecash">FREECASH</div>
+                <h1 class="instructions-title">Get paid to<br><span class="highlight">scroll TikTok</span></h1>
+                <p class="instructions-subtitle">Turn your screen time into cash.</p>
+                <div class="earning-badge">
+                    Earn up to <span class="earning-amount">$2,000/week</span>
+                </div>
+            </div>
+
+            <div class="section-label">How to Start</div>
+
+            <div class="step-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Create your account</div>
+                        <div class="step-description">Get $5 instantly just for signing up</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Unlock the TikTok offer</div>
+                        <div class="step-description">Complete 1 offer to unlock the TikTok scroll offer</div>
+                        <span class="step-badge important">Important</span>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Get paid</div>
+                        <div class="step-description">Cash out via PayPal, crypto, bank, or gift cards</div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://www.ch6rrl8trk.com/3KFRZ6/9B9DM/" class="cta-button">START EARNING</a>
+
+            <div class="trust-indicators">
+                <div class="stars">★★★★★</div>
+                <div class="rating-text">4.8 · 251k reviews</div>
+            </div>
+            <div class="payment-methods">PayPal · Crypto · Bank · Gift Cards</div>
+        </div>
+
+        <!-- Under 21 Instructions Page -->
+        <div id="instructionsUnder21" class="page">
+            <div class="instructions-header">
+                <div class="brand-logo logo-playful">PLAYFUL</div>
+                <h1 class="instructions-title">Get paid to<br><span class="highlight">scroll TikTok</span></h1>
+                <p class="instructions-subtitle">Turn your screen time into cash.</p>
+                <div class="earning-badge">
+                    Earn up to <span class="earning-amount">$2,000/week</span>
+                </div>
+            </div>
+
+            <div class="section-label">How to Start</div>
+
+            <div class="step-list">
+                <div class="step purple">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Create your account</div>
+                        <div class="step-description">Sign up and start earning rewards instantly</div>
+                    </div>
+                </div>
+
+                <div class="step purple">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Complete offers</div>
+                        <div class="step-description">Earn points by completing simple tasks and offers</div>
+                    </div>
+                </div>
+
+                <div class="step purple">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Get rewarded</div>
+                        <div class="step-description">Redeem your points for gift cards & rewards</div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://www.ch6rrl8trk.com/3KFRZ6/9B9DM/" class="cta-button purple">START EARNING</a>
+
+            <div class="trust-indicators">
+                <div class="stars">★★★★★</div>
+                <div class="rating-text">4.8 · 251k reviews</div>
+            </div>
+            <div class="payment-methods">Gift Cards · Rewards · Digital Cash</div>
+        </div>
+    </div>
+
+    <script>
+        function showInstructions(ageGroup) {
+            // Hide age gate
+            document.getElementById('ageGate').classList.remove('active');
+            
+            // Show appropriate instructions page
+            if (ageGroup === '21plus') {
+                document.getElementById('instructions21plus').classList.add('active');
+                
+                // Track 21+ selection
+                console.log('Age selected: 21+');
+                // fbq('track', 'AgeSelected', {age: '21+'});
+                // ttq.track('ClickButton', {content_name: '21plus'});
+            } else {
+                document.getElementById('instructionsUnder21').classList.add('active');
+                
+                // Track under 21 selection
+                console.log('Age selected: under 21');
+                // fbq('track', 'AgeSelected', {age: 'under_21'});
+                // ttq.track('ClickButton', {content_name: 'under21'});
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
